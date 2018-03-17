@@ -1,50 +1,166 @@
 <template>
-  <div>
-    <div id="app">
-      <router-view/>
-    </div>
+  <div class="homeMain">
+    <el-container>
+    <el-header>
+      <el-menu
+        :default-active="activeIndex2"
+        class="el-menu-demo"
+        mode="horizontal"
+        @select="handleSelect"
+        background-color="#c7283b"
+        text-color="#fff"
+        active-text-color="#ffd04b"
+        router="false">
+        <el-menu-item index="/home">商城首页</el-menu-item>
+        <el-submenu index="/commodity">
+          <template slot="title">拍品分类</template>
+          <el-submenu index="commodity">
+            <template slot="title">中国绘画</template>
+            <el-menu-item index="/commodity/paiOne/zhongOne">山水</el-menu-item>
+            <el-menu-item index="/commodity/paiOne/zhongTwo">花鸟</el-menu-item>
+            <el-menu-item index="/commodity/paiOne/zhongThree">人物</el-menu-item>
+            <el-menu-item index="/commodity/paiOne/zhongFour">画瓷</el-menu-item>
+          </el-submenu>
+          <el-submenu index="2-2">
+            <template slot="title">书法篆刻</template>
+            <el-menu-item index="/commodity/paiTwo/shuOne">楷书</el-menu-item>
+            <el-menu-item index="/commodity/paiTwo/shuTwo">行书</el-menu-item>
+            <el-menu-item index="/commodity/paiTwo/shuThree">隶书</el-menu-item>
+            <el-menu-item index="/commodity/paiTwo/shuFour">篆书</el-menu-item>
+            <el-menu-item index="/commodity/paiTwo/shuFive">草书</el-menu-item>
+            <el-menu-item index="/commodity/paiTwo/shuSix">篆刻</el-menu-item>
+            <el-menu-item index="/commodity/paiTwo/shuSeven">匾额</el-menu-item>
+            <el-menu-item index="/commodity/paiTwo/shuEight">古籍文献</el-menu-item>
+          </el-submenu>
+          <el-submenu index="2-3">
+            <template slot="title">西画雕塑</template>
+            <el-menu-item index="/commodity/paiThree/xiOne">油画</el-menu-item>
+            <el-menu-item index="/commodity/paiThree/xiTwo">雕塑</el-menu-item>
+            <el-menu-item index="/commodity/paiThree/xiThree">版画</el-menu-item>
+            <el-menu-item index="/commodity/paiThree/xiFour">影响</el-menu-item>
+            <el-menu-item index="/commodity/paiThree/xiFive">水彩色粉</el-menu-item>
+            <el-menu-item index="/commodity/paiThree/xiSix">其他</el-menu-item>
+          </el-submenu>
+          <el-submenu index="2-4">
+            <template slot="title">古瓷杂顶</template>
+            <el-menu-item index="/commodity/paiFour/guOne">青花</el-menu-item>
+            <el-menu-item index="/commodity/paiFour/guTwo">彩瓷</el-menu-item>
+            <el-menu-item index="/commodity/paiFour/guThree">色釉瓷</el-menu-item>
+            <el-menu-item index="/commodity/paiFour/guFour">外销瓷</el-menu-item>
+            <el-menu-item index="/commodity/paiFour/guFive">文玩杂顶</el-menu-item>
+            <el-menu-item index="/commodity/paiFour/guSix">玉器</el-menu-item>
+            <el-menu-item index="/commodity/paiFour/guSeven">金属器</el-menu-item>
+          </el-submenu>
+          <el-submenu index="2-5">
+            <template slot="title">当代工艺</template>
+            <el-menu-item index="/commodity/paiFive/dangOne">竹木牙角</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangTwo">玉器</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangThree">翡翠</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangFour">珠宝</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangFive">当代陶瓷</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangSix">紫砂</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangSeven">名石</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangEight">玛瑙</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangNine">琥珀蜜蜡</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangTen">沉香檀香</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangEleven">金属器</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangTwelve">海外艺术品</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangThirteen">珊瑚</el-menu-item>
+            <el-menu-item index="/commodity/paiFive/dangFourteen">其他</el-menu-item>
+          </el-submenu>
+          <el-submenu index="2-6">
+            <template slot="title">酒品</template>
+            <el-menu-item index="/commodity/paiSix/jiuOne">红酒</el-menu-item>
+            <el-menu-item index="/commodity/paiSix/jiuTwo">白酒</el-menu-item>
+          </el-submenu>
+        </el-submenu>
+        <el-menu-item index="auctionCenter">拍卖中心</el-menu-item>
+        <el-submenu index="/personalCenter">
+          <template slot="title">个人中心</template>
+          <el-menu-item index="/personalCenter/shoppingCart">购物车</el-menu-item>
+          <el-menu-item index="/personalCenter/orderQuery">订单查询</el-menu-item>
+          <el-menu-item index="/personalCenter/logisticsQuery">物流查询</el-menu-item>
+          <el-menu-item index="/personalCenter/memberCenter">会员中心</el-menu-item>
+        </el-submenu>
+        <el-menu-item index="/artCenter">艺术新闻</el-menu-item>
+        <el-menu-item index="/integralMall">积分商城</el-menu-item>
+        <el-menu-item index="/preferentialVolumeMall">优惠卷商城</el-menu-item>
+        <el-menu-item index="/contactUs">联系我们</el-menu-item>
+        <div class="right-title">
+          <ul>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">登陆</a></li>
+          </ul>
+        </div>
+      </el-menu>
+
+    </el-header>
+    <!-- <el-main>Main</el-main> -->
+    <router-view></router-view>
+    <el-footer>Footer</el-footer>
+    </el-container>
   </div>
 </template>
-
 <script>
-
-export default {
-  name: 'App',
-  components: {
-  },
-  methods: {
-          /**
-       * 切换语言 
-
-       changeLangEvent() {
-         this.$confirm('确定切换语言吗?', '提示', {
-             confirmButtonText: '确定',
-             cancelButtonText: '取消',
-             type: 'warning'
-          }).then(() => {
-             if ( this.lang === 'zh-CN' ) {
-                this.lang = 'en-US';
-                this.$i18n.locale = this.lang;//关键语句
-             }else {
-                this.lang = 'zh-CN';
-                this.$i18n.locale = this.lang;//关键语句
-             }
-          }).catch(() => {
-             this.$message({
-                 type: 'info',
-             });
-          });
-      }   */ 
+  export default {
+    data() {
+      return {
+        activeIndex: 'home',
+        activeIndex2: 'home'
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
   }
-}
 </script>
+<style lang="scss" scoped>
+  .el-header{
+    background-color: #c7283b;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+      // 右上角样式
+.right-title{
+  width:150px;
+    height:60px;
+    float:right;
+    li{
+      list-style-type: none;
+      float: left;
+      font-size:16px;
+      margin:0 0 0 20px;
+      color:#333333;
+      text-shadow: #D4D4D4 1px 1px 1px;
+      a{
+        color:#333333;
+        text-decoration: none;
+      }
+    }
+}
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+  }
+  .el-footer{
+    background-color: #DEDEDE;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+  }
+  .el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    line-height: 160px;
+  }
+
+  body > .el-container {
+    margin-bottom: 40px;
+  }
+// 小图标的样式
+.el-icon-arrow-down{
+  color:#FFFFFF!important;
 }
 </style>

@@ -1,4 +1,3 @@
-
 import Vue from 'vue'
 import App from './App'
 // 路由
@@ -16,7 +15,7 @@ import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 Vue.use(VueI18n) // 通过插件的形式挂载
 Vue.use(ElementUI)
-Vue.config.productionTip = false
+// Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 const i18n = new VueI18n({
@@ -34,3 +33,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
