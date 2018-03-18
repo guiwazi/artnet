@@ -1,6 +1,12 @@
-export const m = {
-  nameOne: 'wangwei',
-  nameTwo: 'zhangsheng',
-  nameThree: 'tianrui',
-  nameFour: 'xiapei',
+export const artLang = {
+  nameOne: 'Home Page',
+  nameTwo: 'Commodity',
+  nameThree: 'Auction',
+  nameFour: 'Personal',
+  nameFive: 'News',
+  nameSix: 'Integral',
+  nameSeven: 'Coupon',
+  nameEight: 'Contact',
+  nameNine: 'Land',
+  nameTen:'register'
 }

@@ -11,9 +11,9 @@
         text-color="#fff"
         active-text-color="#ffd04b"
         router="false">
-        <el-menu-item index="/home">商城首页</el-menu-item>
+        <el-menu-item index="/home">{{$t('artLang.nameOne')}}</el-menu-item>
         <el-submenu index="/commodity">
-          <template slot="title">拍品分类</template>
+          <template slot="title">{{$t('artLang.nameTwo')}}</template>
           <el-submenu index="commodity">
             <template slot="title">中国绘画</template>
             <el-menu-item index="/commodity/paiOne/zhongOne">山水</el-menu-item>
@@ -74,34 +74,37 @@
             <el-menu-item index="/commodity/paiSix/jiuTwo">白酒</el-menu-item>
           </el-submenu>
         </el-submenu>
-        <el-menu-item index="auctionCenter">拍卖中心</el-menu-item>
+        <el-menu-item index="auctionCenter">{{$t('artLang.nameThree')}}</el-menu-item>
         <el-submenu index="/personalCenter">
-          <template slot="title">个人中心</template>
+          <template slot="title">{{$t('artLang.nameFour')}}</template>
           <el-menu-item index="/personalCenter/shoppingCart">购物车</el-menu-item>
           <el-menu-item index="/personalCenter/orderQuery">订单查询</el-menu-item>
           <el-menu-item index="/personalCenter/logisticsQuery">物流查询</el-menu-item>
           <el-menu-item index="/personalCenter/memberCenter">会员中心</el-menu-item>
         </el-submenu>
-        <el-menu-item index="/artCenter">艺术新闻</el-menu-item>
-        <el-menu-item index="/integralMall">积分商城</el-menu-item>
-        <el-menu-item index="/preferentialVolumeMall">优惠卷商城</el-menu-item>
-        <el-menu-item index="/contactUs">联系我们</el-menu-item>
+        <el-menu-item index="/artCenter">{{$t('artLang.nameFive')}}</el-menu-item>
+        <el-menu-item index="/integralMall">{{$t('artLang.nameSix')}}</el-menu-item>
+        <el-menu-item index="/preferentialVolumeMall">{{$t('artLang.nameSeven')}}</el-menu-item>
+        <el-menu-item index="/contactUs">{{$t('artLang.nameEight')}}</el-menu-item>
         <div class="right-title">
           <ul>
-            <li><a href="#">注册</a></li>
-            <li><a href="#">登陆</a></li>
+            <li><span>{{$t('artLang.nameNine')}}</span></li>
+            <li><span>{{$t('artLang.nameTen')}}</span></li>
+            <li><span  @click="changeLocale ()">切换语言</span></li>
           </ul>
         </div>
       </el-menu>
 
     </el-header>
-    <!-- <el-main>Main</el-main> -->
     <router-view></router-view>
-    <el-footer>Footer</el-footer>
+    <!-- footer组件 -->
+    <artFooter></artFooter>
     </el-container>
   </div>
 </template>
 <script>
+// 底部footer引入
+import artFooter from './common/footer/footerContact.vue'
   export default {
     data() {
       return {
@@ -109,10 +112,25 @@
         activeIndex2: 'home'
       };
     },
+    components:{
+      artFooter
+    },
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
-      }
+      },
+      // 语言切换方法
+      changeLocale () {
+          this.$confirm(this.$t('是否切换语言？'),  {
+              confirmButtonText: this.$t('确定'),
+              cancelButtonText: this.$t('取消'),
+              type: 'warning'
+              }).then(() => {
+                 let locale = this.$i18n.locale
+                 locale === 'zh' ? this.$i18n.locale = 'en' : this.$i18n.locale = 'zh'
+              }).catch(() => {
+              })
+       }
     }
   }
 </script>
@@ -124,7 +142,7 @@
     line-height: 60px;
       // 右上角样式
 .right-title{
-  width:150px;
+  width:300px;
     height:60px;
     float:right;
     li{
