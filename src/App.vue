@@ -88,9 +88,9 @@
         <el-menu-item index="/contactUs">{{$t('artLang.nameEight')}}</el-menu-item>
         <div class="right-title">
           <ul>
-            <li><span>{{$t('artLang.nameNine')}}</span></li>
-            <li><span>{{$t('artLang.nameTen')}}</span></li>
-            <li><span  @click="changeLocale ()">切换语言</span></li>
+            <li><span class="right-title-span">{{$t('artLang.nameNine')}}</span></li>
+            <li><span class="right-title-span">{{$t('artLang.nameTen')}}</span></li>
+            <li><span class="right-title-span"  @click="changeLocale ()">切换语言</span></li>
           </ul>
         </div>
       </el-menu>
@@ -152,14 +152,18 @@ import artFooter from './common/footer/footerContact.vue'
       margin:0 0 0 20px;
       color:#333333;
       text-shadow: #D4D4D4 1px 1px 1px;
-      a{
+      span{
         color:#333333;
         text-decoration: none;
       }
     }
 }
 
+// 鼠标hover样式
+.right-title-span:hover{
+  cursor:pointer;
 
+}
   }
   .el-footer{
     background-color: #DEDEDE;
