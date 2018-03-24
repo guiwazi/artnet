@@ -1,6 +1,6 @@
 <template>
   <div>
-  	艺术新闻
+  	艺术新闻 sss
   </div>
 </template>
 <script>
