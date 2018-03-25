@@ -88,8 +88,8 @@
         <el-menu-item index="/contactUs">{{$t('artLang.nameEight')}}</el-menu-item>
         <div class="right-title">
           <ul>
-            <li><span class="right-title-span">{{$t('artLang.nameNine')}}</span></li>
-            <li><span class="right-title-span">{{$t('artLang.nameTen')}}</span></li>
+            <li><span class="right-title-span" @click="showdenglu()">{{$t('artLang.nameNine')}}</span></li>
+            <li><span class="right-title-span" @click="showzhuce()">{{$t('artLang.nameTen')}}</span></li>
             <li><span class="right-title-span"  @click="changeLocale ()">切换语言</span></li>
           </ul>
         </div>
@@ -100,20 +100,34 @@
     <!-- footer组件 -->
     <artFooter></artFooter>
     </el-container>
+    <!-- 登陆组件 -->
+    <transition name="el-fade-in-linear">
+    <denglu v-show="disdenglu" @close="closedenglu()"></denglu>
+    </transition>
+    <!-- 注册组件 -->
+    <zhuce v-show="diszhuce" @closezhu="closezhuce()"></zhuce>
   </div>
 </template>
 <script>
+// 登陆弹窗
+import denglu from './components/Land/view/denglu.vue'
+// 注册弹窗
+import zhuce from './components/Land/view/zhuce.vue'
 // 底部footer引入
 import artFooter from './common/footer/footerContact.vue'
   export default {
     data() {
       return {
         activeIndex: 'home',
-        activeIndex2: 'home'
+        activeIndex2: 'home',
+        disdenglu:false,
+        diszhuce:false 
       };
     },
     components:{
-      artFooter
+      artFooter,
+      denglu,
+      zhuce
     },
     methods: {
       handleSelect(key, keyPath) {
@@ -130,7 +144,27 @@ import artFooter from './common/footer/footerContact.vue'
                  locale === 'zh' ? this.$i18n.locale = 'en' : this.$i18n.locale = 'zh'
               }).catch(() => {
               })
-       }
+       },
+       // 关闭注册弹窗
+       closedenglu(target,target1){
+        this.disdenglu=target;
+        this.diszhuce=target1;
+       },
+       // 显示注册弹窗
+       showdenglu(){
+        this.disdenglu=true;
+       },
+       // 跳转到登陆
+
+       // 显示登陆窗口
+       showzhuce(){
+        this.diszhuce=true;
+       },
+       // 关闭登陆窗口
+       closezhuce(target){
+        this.diszhuce=target;
+        this.disdenglu=true;
+       },
     }
   }
 </script>

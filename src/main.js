@@ -11,7 +11,9 @@ import $ from 'jquery'
 import VueI18n from 'vue-i18n'
 // 引入echarts
 import echarts from 'echarts'
-
+// 引入axios
+import axios from 'axios'
+Vue.prototype.$ajax = axios
 Vue.prototype.$echarts = echarts
 Vue.use(VueI18n) // 通过插件的形式挂载
 Vue.use(ElementUI)
