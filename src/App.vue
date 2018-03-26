@@ -84,7 +84,7 @@
         </el-submenu>
         <el-menu-item index="/artCenter">{{$t('artLang.nameFive')}}</el-menu-item>
         <el-menu-item index="/integralMall">{{$t('artLang.nameSix')}}</el-menu-item>
-        <el-menu-item index="/preferentialVolumeMall">{{$t('artLang.nameSeven')}}</el-menu-item>
+        <!-- <el-menu-item index="/preferentialVolumeMall">{{$t('artLang.nameSeven')}}</el-menu-item> -->
         <el-menu-item index="/contactUs">{{$t('artLang.nameEight')}}</el-menu-item>
         <div class="right-title">
           <ul>
@@ -146,9 +146,10 @@ import artFooter from './common/footer/footerContact.vue'
               })
        },
        // 关闭注册弹窗
-       closedenglu(target,target1){
-        this.disdenglu=target;
-        this.diszhuce=target1;
+       closedenglu(){
+        console.log();
+        this.disdenglu=false;
+        // this.diszhuce=true;
        },
        // 显示注册弹窗
        showdenglu(){

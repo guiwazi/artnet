@@ -2,9 +2,9 @@
 	<div class="container">
     <!-- banner部分 -->
     <div class="banner">
-    		<el-carousel :interval="4000" type="card" height="350px">
+    		<el-carousel :interval="2000" type="card" height="350px">
     	    <el-carousel-item v-for="item in tebleImg" :key="item">
-    	      <img :src="item" >
+    	      <img :src="item" height="350" width="670">
     	    </el-carousel-item>
     	  </el-carousel>
     </div>
@@ -26,9 +26,15 @@
           <el-tab-pane>
             <span slot="label"><i class="el-icon-date"></i>2018/3/22线下 </span>
             <div class="auction-content-span">
-              <div class="auction-content-span-one"></div>
-              <div class="auction-content-span-two"></div>
-              <div class="auction-content-span-three"></div>
+              <div class="auction-content-span-one">
+                <img src="" alt="">
+              </div>
+              <div class="auction-content-span-two">
+                <img src="" alt="">
+              </div>
+              <div class="auction-content-span-three">
+                <img src="" alt="">
+              </div>
             </div>
           </el-tab-pane>
           <el-tab-pane label="2018/3/23线下"><div class="auction-content-span">
@@ -148,7 +154,7 @@ import imgSix from '../images/banner-6.jpg'
     .auction-nav{
     width:100%;
     height:70px;
-    background-color: #4F83F0;
+    background-color: #169E50;
     .auction-nav-img{
       float: left;
       margin: 5px 0 0 10px;
@@ -270,11 +276,11 @@ import imgSix from '../images/banner-6.jpg'
   
   margin:0 0 30px 0;
   border-radius:10px 10px 10px 10px;
-  box-shadow: #5DA5F8 2px 2px 2px,#E09D9D -1px -1px 1px;
+  box-shadow: #9D9D9D 2px 2px 2px,#DEDEDE -1px -1px 1px;
   .commodity-show-one{
     width:100%;
     height:70px;
-    background-color:#5DA5F8;
+    background-color:#EAEEF7;
     border-radius:10px 10px 0 0;
     .commodity-show-one-span{
       line-height:70px;
@@ -317,11 +323,11 @@ import imgSix from '../images/banner-6.jpg'
   
   margin:0 0 30px 0;
   border-radius:10px 10px 10px 10px;
-  box-shadow: #45CC3C 2px 2px 2px,#E09D9D -1px -1px 1px;
+  box-shadow: #9D9D9D 2px 2px 2px,#DEDEDE -1px -1px 1px;
   .commodity-show-two{
     width:100%;
     height:70px;
-    background-color:#45CC3C;
+    background-color:#F3FBF1;
     border-radius:10px 10px 0 0;
     .commodity-show-two-span{
       line-height:70px;
@@ -364,11 +370,11 @@ import imgSix from '../images/banner-6.jpg'
   
   margin:0 0 30px 0;
   border-radius:10px 10px 10px 10px;
-  box-shadow: #EDC52F 2px 2px 2px,#E09D9D -1px -1px 1px;
+  box-shadow: #9D9D9D 2px 2px 2px,#DEDEDE -1px -1px 1px;
   .commodity-show-three{
     width:100%;
     height:70px;
-    background-color:#EDC52F;
+    background-color:#F7F7E7;
     border-radius:10px 10px 0 0;
     .commodity-show-three-span{
       line-height:70px;

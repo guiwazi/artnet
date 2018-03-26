@@ -1,11 +1,11 @@
 <template>
   <div class="title">
-    <aaa></aaa>
+    <topNav></topNav>
     <show></show>
   </div>
 </template>
 <script>
-  import aaa from '../component/top.vue'
+  import topNav from '../component/top.vue'
   import show from '../component/show.vue'
   export default {
     data() {
@@ -13,7 +13,7 @@
       }
     },
     components: {
-    aaa,
+    topNav,
     show
   }
   }
