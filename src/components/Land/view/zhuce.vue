@@ -19,11 +19,11 @@
                 		</li>
                 		<li class="zhuce-ul-li">
                 			<span class="zhuce-ul-li-span zhuce-all-span">密码</span>
-							    <el-input v-model="input" style="top:-40px;left:60px;width: 290px;" placeholder="请输入密码"></el-input>
+							    <el-input v-model="input5" style="top:-40px;left:60px;width: 290px;" placeholder="请输入密码"></el-input>
                 		</li>
                 		<li class="zhuce-ul-li">
                 			<span class="zhuce-ul-li-span zhuce-all-span">验证码</span>
-							    <el-input v-model="input" style="top:-40px;left:60px;width: 150px;" placeholder="请输入验证码"></el-input>
+							    <el-input v-model="input6" style="top:-40px;left:60px;width: 150px;" placeholder="请输入验证码"></el-input>
 							    <img :src="imgPath" alt="验证" style="display:block;width:100px;height:40px; float:left;margin:-80px 0 0 240px;" @click="shuaxin()">
                 		</li>
                 	</ul>
@@ -44,16 +44,15 @@ export default {
     data() {
         return {
         	imgPath:'',
-        	input: '',
+        	input5: '',
+            input6: '',
             state1: '',
-            radio: '0'
+            radio: '0',
+            // 后台的验证码
+            houtaiy:''
         }
     },
     methods:{
-    	// 登陆成功提示
-    	tiaodenglu(){
-    	   this.$message('登陆成功!');
-    	},
     	 // 取消登陆弹窗
     	hidePopzhucezhuce(){
     		this.$emit('closezhu',false);
@@ -89,13 +88,14 @@ export default {
       handleSelect(item) {
         console.log(item);
       },
-      // 获取接口
+      // 获取登陆接口
         submitForm () {
 		    this.$ajax({
 		      method: 'get',
 		      url: 'http://120.79.194.48:8080/Artnet/user/login',
 		   }).then((res) => {
                   this.imgPath=res.data.data[0].url;
+                  this.houtaiy=res.data.data[0].code;
               })
 				.catch(function (error) {
 				console.log(error);
@@ -104,7 +104,34 @@ export default {
 		},
 		shuaxin(){
 			this.submitForm ();
-		}
+		},
+        getdenglu(){
+            //获取登陆接口
+            let formData = new FormData();
+            formData.append('username', this.state1);
+            formData.append('password', this.input5);
+             let config = {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+            }
+             this.$ajax.post('http://120.79.194.48:8080/Artnet/user/login', formData, config).then((res) => {
+                console.log("登陆",res);
+              })
+                .catch(function (error) {
+                console.log(error);
+                })
+        },
+        // 登陆成功提示
+        tiaodenglu(){
+            if(this.houtaiy==this.input6){
+                    this.getdenglu();
+                    this.$message('登陆成功');
+            }
+            else{
+                this.$message('验证码错误！');
+            }
+        },
     },
     components: {
     },

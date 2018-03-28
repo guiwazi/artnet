@@ -5,7 +5,7 @@ export const artLang = {
   nameFour: '个人中心',
   nameFive: '艺术新闻',
   nameSix: '商品详情',
-  nameSeven: '优惠卷商城',
+  nameSeven: '购物车',
   nameEight: '联系我们',
   nameNine: '注册',
   nameTen:'登陆'

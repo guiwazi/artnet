@@ -77,10 +77,10 @@
         <el-menu-item index="auctionCenter">{{$t('artLang.nameThree')}}</el-menu-item>
         <el-submenu index="/personalCenter">
           <template slot="title">{{$t('artLang.nameFour')}}</template>
-          <el-menu-item index="/personalCenter/shoppingCart">购物车</el-menu-item>
-          <el-menu-item index="/personalCenter/orderQuery">订单查询</el-menu-item>
-          <el-menu-item index="/personalCenter/logisticsQuery">物流查询</el-menu-item>
-          <el-menu-item index="/personalCenter/memberCenter">会员中心</el-menu-item>
+          <el-menu-item index="/personalCenter/shoppingCart">我的拍卖网</el-menu-item>
+<!--           <el-menu-item index="/personalCenter/orderQuery">订单查询</el-menu-item>
+          <el-menu-item index="/personalCenter/logisticsQuery">物流查询</el-menu-item> -->
+          <el-menu-item index="/personalCenter/memberCenter">修改资料</el-menu-item>
         </el-submenu>
         <el-menu-item index="/artCenter">{{$t('artLang.nameFive')}}</el-menu-item>
         <el-menu-item index="/integralMall">{{$t('artLang.nameSix')}}</el-menu-item>

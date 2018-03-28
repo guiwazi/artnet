@@ -4,8 +4,8 @@ export const artLang = {
   nameThree: 'Auction',
   nameFour: 'Personal',
   nameFive: 'News',
-  nameSix: 'Integral',
-  nameSeven: 'Coupon',
+  nameSix: 'Commodity details',
+  nameSeven: 'Shopping Cart',
   nameEight: 'Contact',
   nameNine: 'Land',
   nameTen:'register'
