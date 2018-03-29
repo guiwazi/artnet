@@ -23,7 +23,7 @@
                 		</li>
                 		<li class="zhuce-ul-li">
                 			<span class="zhuce-ul-li-span zhuce-all-span">验证码</span>
-							    <el-input v-model="input6" style="top:-40px;left:60px;width: 150px;" placeholder="请输入验证码"></el-input>
+							    <el-input v-model="input6" style="top:-40px;left:60px;width: 150px;" placeholder="区分大小写"></el-input>
 							    <img :src="imgPath" alt="验证" style="display:block;width:100px;height:40px; float:left;margin:-80px 0 0 240px;" @click="shuaxin()">
                 		</li>
                 	</ul>
@@ -127,6 +127,7 @@ export default {
             if(this.houtaiy==this.input6){
                     this.getdenglu();
                     this.$message('登陆成功');
+                    this.$emit('closezhu',false);
             }
             else{
                 this.$message('验证码错误！');

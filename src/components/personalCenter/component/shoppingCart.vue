@@ -24,10 +24,12 @@ import queren from './logisticsQuery.vue'
       	showQueren:false
       }
     },
+    methods:{
+    },
     components: {
     	myAuction,
     	tijiao,
-    	queren
+    	queren,
 
   }
   }
