@@ -11,7 +11,7 @@
     </div>
     <div class="landscape-page" style="margin-top:20px">
       <ul>
-        <li>
+        <li @click="tiaoshangping()">
           <div>
             <img src="../../images/paiOne-one/001.jpg" alt="">
             <h2>安泉岭-川江晨曲</h2>
@@ -191,6 +191,12 @@ export default {
   data() {
     return {};
   },
+  methods:{
+    // 跳转到商品详情
+    tiaoshangping(){
+      this.$router.push({path:"/integralMall"});
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

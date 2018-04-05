@@ -94,7 +94,7 @@
                       </span>通过您的开户银行或相应的电子银行进行转账
                   </p>
               </div>
-              <button class="go_pay">去支付</button>
+              <button class="go_pay" @click="zhifuchenggong()">去支付</button>
           </section>
           <div style="clear:both;"></div>
 
@@ -105,6 +105,13 @@
   export default {
     data() {
       return {
+      }
+    },
+    methods:{
+      zhifuchenggong(){
+        this.$message('恭喜你支付成功');
+      // 回到我的拍卖主页
+      this.$emit('huimyauctong','true')
       }
     }
   }

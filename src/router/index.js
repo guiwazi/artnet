@@ -117,7 +117,7 @@ import orderQuery from '@/components/personalCenter/component/orderQuery.vue'
 // 个人中心-物流查询
 import logisticsQuery from '@/components/personalCenter/component/logisticsQuery.vue'
 // 个人中心-会员中心
-import memberCenter from '@/components/personalCenter/component/memberCenter.vue'
+// import memberCenter from '@/components/personalCenter/component/memberCenter.vue'
 
 
 // 艺术新闻
@@ -442,11 +442,6 @@ export default new Router({
           path: 'logisticsQuery',
           name:'logisticsQuery',
           component: logisticsQuery
-        },
-        {
-          path: 'memberCenter',
-          name:'memberCenter',
-          component: memberCenter
         }
       ]
     },

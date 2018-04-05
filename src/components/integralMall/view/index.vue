@@ -33,6 +33,7 @@
             </div>
             <div class="show-right-small">
               <p>装裱费：免费&nbsp;&nbsp;&nbsp;&nbsp;运费：¥100</p>
+              <el-button type="warning" icon="el-icon-star-off" circle style="float:left;margin:10px 0 10px 20px;"@click="shoucang()"></el-button>
             </div>
             <div class="show-right-mall">
               <input type="button" value="加入购物车">
@@ -58,6 +59,10 @@ export default {
     timer
   },
   methods: {
+     // 收藏成功提示
+      shoucang(){
+        this.$message('收藏成功！');
+      },
     // 顶部切换
     move() {
       var oDiv = document.getElementById("turn");
@@ -141,7 +146,7 @@ export default {
         oBigimg.style.top =-percentY * oBigimg.offsetHeight + oBigbox.offsetHeight / 2 + "px";
       };
     },
-  }
+  },
 };
 </script>
 <style lang="scss">
@@ -309,7 +314,6 @@ export default {
         height: 40px;
         margin: 0 auto;
         margin-top: 10px;
-        border-bottom: 1px solid #9e9e9e;
         input {
           width: 100%;
           height: 100%;

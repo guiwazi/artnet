@@ -29,15 +29,17 @@
                 		</li>
                 		<li class="denglu-ul-li">
                 			<span class="denglu-ul-li-span degnlu-all-span">设置密码</span>
-							    <el-input v-model="input3" style="top:-40px;left:60px;width: 290px;" placeholder="请输入密码"></el-input>
+							    <el-input v-model="input3" style="top:-40px;left:60px;width: 260px;" placeholder="请输入密码" v-bind:type="mimaone"></el-input>
+                                <i class="el-icon-view" @click="showmima()"></i>
                 		</li>
                 		</li>
                 		<li class="denglu-ul-li">
                 			<span class="denglu-ul-li-span degnlu-all-span">确认密码</span>
-							    <el-input v-model="input4" style="top:-40px;left:60px;width: 290px;" placeholder="再次确认密码"></el-input>
+							    <el-input v-model="input4" style="top:-40px;left:60px;width: 260px;" placeholder="再次确认密码" v-bind:type="mimatwo"></el-input>
+                                <i class="el-icon-view" @click="showmimatwo()"></i>
                 		</li>
                 		<li class="denglu-ul-li" style="margin-top:10px;">
-                			<el-radio v-model="radio" label="1">是否</el-radio>
+                			<el-radio v-model="radio" style="padding-left:10px;"label="1">勾选</el-radio>
                 			<span class="denglu-ul-li-span degnlu-all-span-2">我已阅读并同意《艺术品拍卖网规则》</span>
                 		</li>
                 	</ul>
@@ -56,6 +58,8 @@ export default {
     name: 'sim-inter-info',
     data() {
         return {
+            mimaone:'password',
+            mimatwo:'password',
         	imagesSrc:'',
         	input1: '',
             input2: '',
@@ -188,7 +192,25 @@ export default {
             this.$message('请勾选规则!');
             this.$emit('close',false,true);
         }
-      }
+      },
+      // 显示设置密码
+      showmima(){
+        if(this.mimaone=="password"){
+            this.mimaone="text"
+        }
+        else{
+            this.mimaone="password"
+        }
+      },
+      // 显示确认密码
+      showmimatwo(){
+        if(this.mimatwo=="password"){
+            this.mimatwo="text"
+        }
+        else{
+            this.mimatwo="password"
+        }
+      },
 
     },
     components: {
@@ -335,5 +357,12 @@ a {
 .el-input-1{
 	width: 290px;
 }
-
+/*icon*/
+.el-icon-view{
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin:-30px 0 0 0;
+    font-size: 20px;
+}
 </style>

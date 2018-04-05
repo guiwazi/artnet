@@ -192,7 +192,7 @@
                             <em id="orderAmount">¥19,980</em>
                         </div>
                         <div class="submit">
-                            <button type="button" class="submit-button" >提交订单</button>
+                            <button type="button" class="submit-button" @click="tiaoqueren()">提交订单</button>
                         </div>
                     </div>
                     <div style="clear: both;"></div>
@@ -211,6 +211,10 @@
       }
     },
         methods:{
+            // 跳转到确定订单页面
+            tiaoqueren(){
+                this.$emit('tiaozhuanqueren','true')
+            },
           showVoucher(){
 
             if( $('#venter').hasClass('shang') ){

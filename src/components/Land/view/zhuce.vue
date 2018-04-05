@@ -19,7 +19,8 @@
                 		</li>
                 		<li class="zhuce-ul-li">
                 			<span class="zhuce-ul-li-span zhuce-all-span">密码</span>
-							    <el-input v-model="input5" style="top:-40px;left:60px;width: 290px;" placeholder="请输入密码"></el-input>
+							    <el-input v-model="input5" style="top:-40px;left:60px;width: 260px;" placeholder="请输入密码" v-bind:type="mimathree"></el-input>
+                                <i class="el-icon-view" @click="showmimathree()"></i>
                 		</li>
                 		<li class="zhuce-ul-li">
                 			<span class="zhuce-ul-li-span zhuce-all-span">验证码</span>
@@ -43,6 +44,7 @@ export default {
     name: 'zhuce',
     data() {
         return {
+            mimathree:'password',
         	imgPath:'',
         	input5: '',
             input6: '',
@@ -133,6 +135,15 @@ export default {
                 this.$message('验证码错误！');
             }
         },
+        // 密码显示隐藏
+        showmimathree(){
+            if(this.mimathree=="password"){
+                this.mimathree = "text";
+            }
+            else{
+                this.mimathree = "password";
+            }
+        }
     },
     components: {
     },
@@ -278,5 +289,12 @@ a {
 .el-input-1{
 	width: 290px;
 }
-
+/*icon*/
+.el-icon-view{
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin:-30px 0 0 0;
+    font-size: 20px;
+}
 </style>

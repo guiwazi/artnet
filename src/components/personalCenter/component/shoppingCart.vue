@@ -2,11 +2,17 @@
 	<!-- 我的拍卖网主页 提交订单 确认订单 -->
   <div class="paitique">
   	<!-- 我的拍卖网组件 -->
-  	<myAuction v-show="showmyAuction"></myAuction>
+    <transition name="el-zoom-in-top">
+  	<myAuction v-show="showmyAuction" @tijiaodingdang="showdingdang()"></myAuction>
+    </transition>
   	<!-- 提交订单组件 -->
-  	<tijiao v-show="showTijiao"></tijiao>
+    <transition name="el-zoom-in-top">
+  	<tijiao v-show="showTijiao" @tiaozhuanqueren="showqueren()"></tijiao>
+    </transition>
   	<!-- 确认订单组件 -->
-  	<queren v-show="showQueren"></queren>
+    <transition name="el-zoom-in-top">
+  	<queren v-show="showQueren" @huimyauctong="showmyauction()"></queren>
+    </transition>
   </div>
 </template>
 <script>
@@ -25,6 +31,23 @@ import queren from './logisticsQuery.vue'
       }
     },
     methods:{
+      // 弹窗提交订单页面
+      showdingdang(){
+        this.showTijiao=true;
+        this.showmyAuction=false;
+      },
+      // 弹窗确认订单页面
+      showqueren(){
+        this.showQueren=true;
+        this.showTijiao=false;
+      },
+      // 关闭提交 确认订单页面 显示我的拍卖主页
+      showmyauction(){
+        this.showmyAuction=true;
+        this.showTijiao=false;
+        this.showQueren=false;
+      }
+
     },
     components: {
     	myAuction,

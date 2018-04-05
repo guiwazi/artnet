@@ -196,7 +196,7 @@
 	    	    	</li>
 	    	    </ul>
 	    	    <span class="gouwuche-jiage-span">合计RMB:0</span>
-	    	     <el-button type="primary" style="width:60px;height:40px;float:right;margin:50px 100px 0 0;">结算</el-button>
+	    	     <el-button type="primary" style="width:60px;height:40px;float:right;margin:50px 100px 0 0;" @click="tiaotijiao()">结算</el-button>
 	    	</div>
 	    </el-tab-pane>
 	    <el-tab-pane label="收货地址">
@@ -447,6 +447,11 @@
       }
     },
     methods: {
+    	// 跳转到提交订单页面
+    	tiaotijiao(){
+    		this.$emit('tijiaodingdang','true');
+
+    	},
     	// 删除默认地址
     	shanchudizhi(){
     		this.xingming= '暂无';

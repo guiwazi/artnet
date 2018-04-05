@@ -1,5 +1,5 @@
 <template>
-	<div class="center">
+	<div class="auction-center">
     <div class="lots" @mouseover="mouse()" id="demo">
       <div class="lots-img">
         <div class="lots-img-box" id="lots-img-box">
@@ -120,27 +120,35 @@ export default {
       activeName: 'second',
       chart: null,
       // 初始化图表配置
-      opinion: ["一月", "二月", "三月", "四月", "五月"],
+      opinion: ["周一", "周二", "周三", "周四", "周五","周六", "周日"],
       opinionData: [
         {
-          value: 26,
-          name: "一月"
+          value: 12,
+          name: "周一"
         },
         {
-          value: 31,
-          name: "二月"
+          value: 22,
+          name: "周二"
         },
         {
-          value: 18,
-          name: "三月"
+          value: 12,
+          name: "周三"
         },
         {
-          value: 28,
-          name: "四月"
+          value: 22,
+          name: "周四"
         },
         {
-          value: 21,
-          name: "五月"
+          value: 10,
+          name: "周五"
+        },
+        {
+          value: 12,
+          name: "周六"
+        },
+        {
+          value: 22,
+          name: "周日"
         }
       ]
     };
@@ -242,7 +250,7 @@ export default {
       // set
       this.chart.setOption({
         title: {
-          text: "各月浏览的人数",
+          text: "上周日成交额预览",
           x: "center"
         },
         tooltip: {
@@ -312,7 +320,7 @@ export default {
   margin: 0;
   padding: 0;
 }
-.center {
+.auction-center {
   width: 1200px;
   margin: 0 auto;
   margin-top: 10px;
