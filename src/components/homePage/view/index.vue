@@ -28,7 +28,7 @@
             <div class="auction-content-span">
               <div class="auction-content-span-one">
                 <!-- <img src="../images/meiri-1.jpg" height="300" width="400" alt=""> -->
-                <span class="auction-content-span-one-span"></span>
+                <span class="auction-content-span-one-span">{{countDown}}</span>
                 <span class="auction-content-span-one-span-1">
                   <h2 style="color:#FFFFFF;float:left;margin:10px 0 0 30px;">寒舍.明清古瓷集专场</h2>
                   <p style="color:#FFFFFF;float:left;margin:5px 0 0 30px; font-size:14px;">开始下线:2018-03-28 15:30:00</p>
@@ -52,7 +52,7 @@
           <el-tab-pane label="2018/3/23线下"><div class="auction-content-span">
               <div class="auction-content-span-one1">
                 <!-- <img src="../images/meiri-1.jpg" height="300" width="400" alt=""> -->
-                <span class="auction-content-span-one-span"></span>
+                <span class="auction-content-span-one-span">{{countDown}}</span>
                 <span class="auction-content-span-one-span-11">
                   <h2 style="color:#FFFFFF;float:left;margin:10px 0 0 30px;">寒舍.明清古瓷集专场</h2>
                   <p style="color:#FFFFFF;float:left;margin:5px 0 0 30px; font-size:14px;">开始下线:2018-03-28 15:30:00</p>
@@ -211,9 +211,16 @@ import imgSix from '../images/banner-6.jpg'
   export default {
     data() {
       return {
-        tebleImg:[imgOne,imgTwo,imgThree,imgFour,imgFive,imgSix]
+        tebleImg:[imgOne,imgTwo,imgThree,imgFour,imgFive,imgSix],
+        countDown:123,
 
       }
+    },
+    methods:{
+      //带天数的倒计时
+
+    },
+    created() {
     },
 
   }
@@ -268,9 +275,12 @@ import imgSix from '../images/banner-6.jpg'
         .auction-content-span-one-span{
           width:100%;
           height:80px;
-          background-color:red;
+          color:#FFFFFF;
+          font-size:20px;
+          font-weight: bold;
           display:block;
           float: left;
+          margin:5px 0 0 10px;
         }
         .auction-content-span-one-span-1{
           width:100%;
@@ -290,9 +300,12 @@ import imgSix from '../images/banner-6.jpg'
         .auction-content-span-one-span{
           width:100%;
           height:80px;
-          background-color:red;
+          color:#FFFFFF;
+          font-size:20px;
+          font-weight: bold;
           display:block;
           float: left;
+          margin:5px 0 0 10px;
         }
         .auction-content-span-one-span-11{
           width:100%;

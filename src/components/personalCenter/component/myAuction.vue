@@ -36,10 +36,10 @@
 	    	    	</div>
 	    	    	<ul class="jibenziliao">
 	    	    		<li class="jibenziliao-li"><span class="jibenziliao-li-span">昵称</span>
-	    	    		    <el-input v-model="input" placeholder="昵称" style="width:280px;float:left;margin:0 0 0 0;"></el-input>
+	    	    		    <el-input v-model="inputnichen" placeholder="昵称" style="width:280px;float:left;margin:0 0 0 0;"></el-input>
 	    	    	    </li>
 	    	    		<li class="jibenziliao-li"><span class="jibenziliao-li-span">真实姓名</span>
-	    	    			<el-input v-model="inputshouhuoren" placeholder="真实姓名" style="width:280px;float:left;margin:0 0 0 0;"></el-input>
+	    	    			<el-input v-model="inputname" placeholder="真实姓名" style="width:280px;float:left;margin:0 0 0 0;"></el-input>
 	    	    		</li>
 	    	    		<li class="jibenziliao-li"><span class="jibenziliao-li-span">我是</span>
 	    	    			  <el-radio v-model="radio" label="1" style="line-height:40px;">男</el-radio>
@@ -54,7 +54,7 @@
 						    </el-date-picker>
 	    	    		</li>
 	    	    		<li class="jibenziliao-li" style="margin:50px 0 0 0;"><span class="jibenziliao-li-span"></span>
-	    	    			 <el-button type="primary" style="height:40px;width:80px;margin:0 0 0 100px;">保存</el-button>
+	    	    			 <el-button type="primary" style="height:40px;width:80px;margin:0 0 0 100px;" @click="jibenxinxibao()">保存</el-button>
 	    	    		</li>
 	    	    	</ul>
 	
@@ -71,15 +71,15 @@
 	    	    			</li>
 	    	    			<li class="anquanshezhi-ul-li-ul-li">
 	    	    				<span class="anquanshezhi-ul-li-ul-li-span">当前密码</span>
-	    	    				<el-input v-model="input" placeholder="当前密码" style="float:left; width:250px;"></el-input>
+	    	    				<el-input v-model="input11" placeholder="当前密码" style="float:left; width:250px;"></el-input>
 	    	    			</li>
 	    	    			<li class="anquanshezhi-ul-li-ul-li">
 	    	    				<span class="anquanshezhi-ul-li-ul-li-span">新密码</span>
-	    	    				<el-input v-model="input" placeholder="新密码" style="float:left; width:250px;"></el-input>
+	    	    				<el-input v-model="input22" placeholder="新密码" style="float:left; width:250px;"></el-input>
 	    	    			</li>
 	    	    			<li class="anquanshezhi-ul-li-ul-li">
 	    	    				<span class="anquanshezhi-ul-li-ul-li-span">确认新密码</span>
-	    	    				<el-input v-model="input" placeholder="确认新密码" style="float:left; width:250px;"></el-input>
+	    	    				<el-input v-model="input33" placeholder="确认新密码" style="float:left; width:250px;"></el-input>
 	    	    			</li>
 	    	    			<li class="anquanshezhi-ul-li-ul-li">
 	    	    				<el-button type="success" style="float:left;height:40px;width:50px;margin:0 0 0 135px;">确定</el-button>
@@ -95,21 +95,21 @@
 	    	    			</li>
 	    	    			<li class="anquanshezhi-ul-li-ul-li">
 	    	    				<span class="anquanshezhi-ul-li-ul-li-span">手机号</span>
-	    	    				<el-input v-model="input" placeholder="手机号" style="float:left; width:250px;"></el-input>
+	    	    				<el-input v-model="input44" placeholder="手机号" style="float:left; width:250px;"></el-input>
 	    	    			</li>
 	    	    			<li class="anquanshezhi-ul-li-ul-li">
 	    	    				<span class="anquanshezhi-ul-li-ul-li-span"></span>
-	    	    				<el-input v-model="input" placeholder="验证码" style="float:left; width:80px;"></el-input>
+	    	    				<el-input v-model="input55" placeholder="验证码" style="float:left; width:80px;"></el-input>
 	    	    				<img :src="imgPathh" alt="验证" style="display:block;width:100px;height:40px; float:left;margin:0 0 0 10px;" >
-	    	    				 <el-button plain style="width:80px;height:40px;">获取验证码</el-button>
+	    	    				 <el-button plain style="width:80px;height:40px;" @click="getxiugai()">获取验证码</el-button>
 	    	    			</li>
 	    	    			<li class="anquanshezhi-ul-li-ul-li">
 	    	    				<span class="anquanshezhi-ul-li-ul-li-span"></span>
-	    	    				<el-input v-model="input" placeholder="输入短信验证码" style="float:left; width:250px;"></el-input>
+	    	    				<el-input v-model="input66" placeholder="输入短信验证码" style="float:left; width:250px;"></el-input>
 	    	    			</li>
 	    	    			<li class="anquanshezhi-ul-li-ul-li">
 	    	    				<span class="anquanshezhi-ul-li-ul-li-span"></span>
-	    	    				<el-button type="success" style="float:left;height:40px;width:50px;margin:0 0 0 25px;">绑定</el-button>
+	    	    				<el-button type="success" style="float:left;height:40px;width:50px;margin:0 0 0 25px;" @click="bangdingphone()">绑定</el-button>
 	    	    				<el-button type="warning" style="float:left;height:40px;width:50px;margin:0 0 0 20px;">取消</el-button>
 	    	    			</li>
 	    	    		</ul>
@@ -122,7 +122,7 @@
 	    	    			</li>
 	    	    			<li class="anquanshezhi-ul-li-ul-li">
 	    	    				<span class="anquanshezhi-ul-li-ul-li-span"></span>
-	    	    				<el-input v-model="input" placeholder="输入短信验证码" style="float:left; width:250px;"></el-input>
+	    	    				<el-input v-model="input77" placeholder="输入短信验证码" style="float:left; width:250px;"></el-input>
 	    	    			</li>
 	    	    			<li class="anquanshezhi-ul-li-ul-li">
 	    	    				<span class="anquanshezhi-ul-li-ul-li-span"></span>
@@ -391,11 +391,25 @@
   export default {
     data() {
       return {
+      	// 基本信息
+      	inputnichen:'',
+      	inputname:'',
+      	// 安全设置变量
+      	anquanyan:'',
+      	input11:'',
+      	input22:'',
+      	input33:'',
+      	input44:'',
+      	input55:'',
+      	input66:'',
+      	input77:'',
+      	// 默认的地址
       	xingming:'王维',
       	dianhua:'15025568143',
       	shouhoudizhi:'重庆市渝中区领事巷6号1-4',
       	tabPosition: 'left',
       	disxiudi:true,
+      	xiugaiyan:'',
       	radioshang1:'',
       	radioshang2:'',
       	morendizhi:true,
@@ -447,6 +461,74 @@
       }
     },
     methods: {
+    	// 基本信息 保存提示
+    	jibenxinxibao(){
+                let formData = new FormData();
+            formData.append('userID', this.inputnichen,'token', this.inputname);
+             let config = {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+            }
+             this.$ajax.post('http://120.79.194.48:8080/Artnet/user/info/uphe', formData, config).then((res) => {
+                if(res.data.error == 0){
+                    alert(res.data.msg);
+                }
+              })
+                .catch(function () {
+                console.log();
+                })
+    	},
+    	// 安全设置 修改密码 获取验证码
+        getxiugai () {
+            this.$ajax({
+              method: 'get',
+              url: 'http://120.79.194.48:8080/Artnet/user/register',
+           }).then((res) => {
+            if(res.data.error == 0){
+                this.imgPathh = res.data.data[0].imageCode[0].url;
+                this.xiugaiyan=res.data.data[0].imageCode[0].code;
+            }
+              })
+                .catch(function (error) {
+                console.log(error);
+                })
+                this.chuanzhanghao();
+
+        },
+        	// 向手机发送验证码
+        chuanzhanghao() {
+            let formData = new FormData();
+            formData.append('verifyData', this.input44);
+             let config = {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+            }
+             this.$ajax.post('http://120.79.194.48:8080/Artnet/user/verify', formData, config).then((res) => {
+                if(res.data.error == 0){
+                    this.anquanyan=res.data.data[0].mailCode;
+                }
+              })
+                .catch(function () {
+                console.log();
+                })
+           },
+        // 安全设置 手机号码
+        bangdingphone(){
+        	if(this.xiugaiyan ==this.input55 ){
+        		this.$message('验证成功!');
+        		if(this.anquanyan==this.input66){
+        			this.$message('绑定成功!');
+        		}
+        		else{
+        			this.$message('手机验证码错误');
+        		}
+        	}
+        	else{
+                this.$message('验证码错误');
+        	}
+        	},
     	// 跳转到提交订单页面
     	tiaotijiao(){
     		this.$emit('tijiaodingdang','true');
@@ -501,7 +583,9 @@
       },
     components: {
  
-    }
+    },
+  created() {
+  },
   }
 }
 </script>

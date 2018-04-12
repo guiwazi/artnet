@@ -1,4 +1,4 @@
-<template>
+<template> 
   <div class="landscape">
     <div class="nav">
       <div class="nav-left">
@@ -11,175 +11,11 @@
     </div>
     <div class="landscape-page" style="margin-top:20px">
       <ul>
-        <li @click="tiaoshangping()">
+        <li @click="tiaoshangping()" v-for="items in items">
           <div>
-            <img src="../../images/paiOne-one/001.jpg" alt="">
-            <h2>安泉岭-川江晨曲</h2>
-            <p>当前价:&nbsp;<span>￥65000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/002.jpg" alt="">
-            <h2>安泉岭-云瀑高秋</h2>
-            <p>当前价:&nbsp;<span>￥25000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div><img src="../../images/paiOne-one/003.jpg" alt="">
-            <h2>凤墨石-松山太庙</h2>
-            <p>当前价:&nbsp;<span>￥9000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/004.jpg" alt="">
-            <h2>郭传璋-黄山松岭</h2>
-            <p>当前价:&nbsp;<span>￥3000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="landscape-page">
-      <ul>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/005.jpg" alt="">
-            <h2>郭传璋-漓江帆影</h2>
-            <p>当前价:&nbsp;<span>￥2000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/006.jpg" alt="">
-            <h2>郭立成-清江帆影</h2>
-            <p>当前价:&nbsp;<span>￥1000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div><img src="../../images/paiOne-one/007.jpg" alt="">
-            <h2>郭立成-山里人家</h2>
-            <p>当前价:&nbsp;<span>￥5000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/008.jpg" alt="">
-            <h2>何棣-家在青山碧水间</h2>
-            <p>当前价:&nbsp;<span>￥5000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="landscape-page">
-      <ul>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/009.jpg" alt="">
-            <h2>何棣-千峰竞秀</h2>
-            <p>当前价:&nbsp;<span>￥500</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/010.jpg" alt="">
-            <h2>黄玉堂-春山佳韵</h2>
-            <p>当前价:&nbsp;<span>￥800</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div><img src="../../images/paiOne-one/011.jpg" alt="">
-            <h2>黄玉堂-峡江岫润</h2>
-            <p>当前价:&nbsp;<span>￥600</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/012.jpg" alt="">
-            <h2>蒋大卫-春山帆影</h2>
-            <p>当前价:&nbsp;<span>￥1000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-     <div class="landscape-page">
-      <ul>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/013.jpg" alt="">
-            <h2>蒋大卫-鸿运当头</h2>
-            <p>当前价:&nbsp;<span>￥3000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/014.jpg" alt="">
-            <h2>李明久-春山图</h2>
-            <p>当前价:&nbsp;<span>￥500</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div><img src="../../images/paiOne-one/015.jpg" alt="">
-            <h2>李明久-江南水乡</h2>
-            <p>当前价:&nbsp;<span>￥1800</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/016.jpg" alt="">
-            <h2>苗重安-山水</h2>
-            <p>当前价:&nbsp;<span>￥5000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="landscape-page">
-      <ul>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/017.jpg" alt="">
-            <h2>石泉-江南新绿</h2>
-            <p>当前价:&nbsp;<span>￥300</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/018.jpg" alt="">
-            <h2>石泉-山水（四屏）</h2>
-            <p>当前价:&nbsp;<span>￥5000</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div><img src="../../images/paiOne-one/019.jpg" alt="">
-            <h2>王天然-江山多娇</h2>
-            <p>当前价:&nbsp;<span>￥500</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="../../images/paiOne-one/020.jpg" alt="">
-            <h2>王天然-紫气东来</h2>
-            <p>当前价:&nbsp;<span>￥500</span></p>
-            <p>下线时间: 2018-03-26 14:30:00</p>
+            <img :src="items.thumb" alt="">
+            <h2>{{items.author}}-{{items.artName}}</h2>
+            <p>售价:&nbsp;<span>￥{{items.price}}</span></p>
           </div>
         </li>
       </ul>
@@ -189,15 +25,42 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      items:[],
+      author:'',
+      artName:'',
+      price:'',
+      thumb:'',
+      j:''
+    };
   },
   methods:{
     // 跳转到商品详情
     tiaoshangping(){
       this.$router.push({path:"/integralMall"});
-    }
-  }
-};
+    },
+      // 获取商品信息
+        getshangping () {
+            this.$ajax({
+              method: 'get',
+              url: ' http://120.79.194.48:8080/Artnet/art/artlist',
+           }).then((res) => {
+            if(res.data.error == 0){
+                 this.items=res.data.data[0].art_lists;
+                 console.log("1111111111",this.items);
+
+            }
+              })
+                .catch(function (error) {
+                console.log(error);
+                })
+        },
+    },
+ created() {
+    this.getshangping()
+},
+
+}
 </script>
 <style lang="scss" scoped>
 * {
